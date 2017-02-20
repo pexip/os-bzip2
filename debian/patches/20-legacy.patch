@@ -5979,7 +5979,7 @@
 +.br
  .B bzcat
  .RB [ " \-s " ]
- [ 
+ [
  .I "filenames \&..."
  ]
  .br
