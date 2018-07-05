@@ -10,7 +10,7 @@ Build-Depends-Indep: texinfo
 Homepage: http://www.bzip.org/
 Vcs-Git: git://git.debian.org/collab-maint/bzip2.git
 Vcs-Browser: http://git.debian.org/?p=collab-maint/bzip2.git
-XS-Pexip-Upstream: http://ftp.debian.org/debian/ jessie
+XS-Pexip-Upstream: http://ftp.debian.org/debian/ stretch
 
 Package: libbz2-1.0
 Priority: important
