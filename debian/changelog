@@ -1,3 +1,19 @@
+bzip2 (1.0.6-8.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * bzip2recover: Fix potential use-after-free, Closes: #827744 (CVE-2016-3189)
+
+ -- Ben Hutchings <ben@decadent.org.uk>  Sun, 29 Jan 2017 18:30:31 +0000
+
+bzip2 (1.0.6-8) unstable; urgency=medium
+
+  * Remove Jorge Ernesto Guevara Cuenca from Uploaders, as agreed with him.
+  * Drop unused Build-Depends: gcc-multilib. Thanks to Helmut Grohne
+    <helmut@subdivi.de>. Closes: #778640
+  * Bump Standards-Version to 3.9.6. No changes needed.
+
+ -- Santiago Ruano Rincón <santiago@debian.org>  Tue, 19 May 2015 21:37:20 +0200
+
 bzip2 (1.0.6-7+b3pexip1) pexip; urgency=low
 
   * Migrate to Jessie
