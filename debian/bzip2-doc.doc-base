@@ -12,6 +12,9 @@ Format: HTML
 Index: /usr/share/doc/bzip2/manual.html
 Files: /usr/share/doc/bzip2/manual.html
 
+Format: PDF
+Files: /usr/share/doc/bzip2/manual.pdf.gz
+
 Format: PostScript
 Files: /usr/share/doc/bzip2/manual.ps.gz
 

@@ -1,3 +1,74 @@
+bzip2 (1.0.6-9.2~deb10u1) buster; urgency=medium
+
+  * Rebuild for buster
+
+ -- Salvatore Bonaccorso <carnil@debian.org>  Wed, 10 Jul 2019 21:17:52 +0200
+
+bzip2 (1.0.6-9.2) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Accept as many selectors as the file format allows (Closes: #931278)
+
+ -- Salvatore Bonaccorso <carnil@debian.org>  Wed, 10 Jul 2019 06:25:07 +0200
+
+bzip2 (1.0.6-9.1) unstable; urgency=high
+
+  * Non-maintainer upload.
+  * Make sure nSelectors is not out of range (CVE-2019-12900)
+    (Closes: #930886)
+
+ -- Salvatore Bonaccorso <carnil@debian.org>  Mon, 24 Jun 2019 22:15:37 +0200
+
+bzip2 (1.0.6-9) unstable; urgency=medium
+
+  [ Santiago Ruano Rincón ]
+  * debian/control: use secure Vcs- urls.
+  * Bump Standards-Version to 3.9.8. No changes needed.
+  * Add 40-bzdiff-l.patch: bzdiff properly passes -I option to diff.
+    Patch from Ubuntu.
+
+  [ Nicolas Boulenguez ]
+  * Allow -doc package to satisfy Multi-Arch: foreign dependencies.
+    Remove duplicate Section: and Priority:.
+  * Refresh patches without all timestamp noise.
+  * Document some patches.
+  * Add basic runtime test.
+  * Split bzdiff-tmpdir-spaces.diff out of 20-legacy.patch.
+  * Split bzip2recover-race-open-output.diff out of 20-legacy.patch.
+  * Standards-Version 4.1.4.
+  * Generate the manual during build instead of embedding it in a patch.
+  * Do not add trailing blank spaces in patches.
+  * Split bzexe out of 20-legacy.patch.
+    Whether bzexe is suggested upstream or maintained in Debian forever,
+    it will be easyer to manage as a normal file than as an upstream patch.
+  * Split the patch documenting --help option.
+  * Pass -D_REENTRANT via CPPFLAGS instead of a patch.
+    The patch only makes upstream handle CPPFLAGS, which may be accepted
+    independently of the shared library.
+  * Split quoting of XML special characters from 20-legacy.diff.
+  * Split the patch building a shared library and handling build flags.
+  * Fix split of bzexe, install it to /bin/.
+  * Drop Postscript documentation.
+    Regeneration of the PS/PDF files fails with interesting messages in
+    the LaTeX log. Since Debian policy recommends HTML as the default
+    documentation format, and we are able to regenerate this HTML from the
+    patched source, it is probably better to provide only this format.
+
+  [ Anthony Fok ]
+  * Point Vcs-* URLs to salsa.debian.org.
+  * Bump Standards-Version to 4.2.0 (no change).
+  * Change Homepage to that archived on web.archive.org because the
+    bzip.org domain has expired and may change hands, as reported
+    at https://lwn.net/Articles/762264/.  (Closes: #905823)
+  * Disable debian/watch as bzip.org has expired and may change hands.
+  * Revise bzip2 package description and remove performance comparison
+    with other compression software.  (Closes: #636184)
+  * Revert to using pristine upstream manual.{html,ps} documentation
+    without rebuilding, and install manual.pdf too.
+  * Add myself to the list of Uploaders.
+
+ -- Anthony Fok <foka@debian.org>  Tue, 14 Aug 2018 13:28:22 -0600
+
 bzip2 (1.0.6-8.1) unstable; urgency=medium
 
   * Non-maintainer upload.
@@ -34,7 +105,7 @@ bzip2 (1.0.6-6) unstable; urgency=low
   * libbz2-dev recommends bzip2-doc to fulfill the lack of specific
     development documentation. Closes: #149953
   * Remove lib{32,64}bz2-{1.0,dev} packages. No longer needed, we rely on
-    multiarch now. 
+    multiarch now.
     libbz2-{1.0,dev} conflict/replace/provide the removed
     packages Closes: #736815
   * d/copyright.in: fix versionless GPL.
@@ -48,7 +119,7 @@ bzip2 (1.0.6-5) unstable; urgency=low
   * Adding watch file
   * Updating rules clean rule.
   * Updating Standards-Version to 3.9.4. No changes needed.
-  * Don't drink and upload release. Thanks to bubulle, habanero and 
+  * Don't drink and upload release. Thanks to bubulle, habanero and
     all the Cheese and Wine orga team.
 
  -- Santiago Ruano Rincón <santiago@debian.org>  Tue, 13 Aug 2013 00:07:30 +0200
@@ -71,7 +142,7 @@ bzip2 (1.0.6-2) unstable; urgency=low
   * Added 10-bzip2.1.patch to remove wrong black spaces in man page.
     Thanks to Bjarni Ingi Gislason. Closes: #675380
   * 30-bzip2-harden.patch to enable hardened build flags. Thanks to
-    Moritz Muehlenhoff. Closes: #655164 
+    Moritz Muehlenhoff. Closes: #655164
 
  -- Santiago Ruano Rincón <santiago@debian.org>  Sun, 03 Jun 2012 12:02:05 +0200
 
@@ -112,7 +183,7 @@ bzip2 (1.0.5-7) unstable; urgency=low
 
 bzip2 (1.0.5-6) unstable; urgency=high
 
-  * Fix integer overflow 
+  * Fix integer overflow
     http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-0405
     http://www.debian.org/security/2010/dsa-2112
     Closes: 597585
@@ -130,11 +201,11 @@ bzip2 (1.0.5-5) unstable; urgency=low
 bzip2 (1.0.5-4) unstable; urgency=low
 
   [Jorge Ernesto Guevara Cuenca]
-  * New co-maintainer. Jorge Ernesto Guevara Cuenca <jguevara@debiancolombia.org> 
+  * New co-maintainer. Jorge Ernesto Guevara Cuenca <jguevara@debiancolombia.org>
   * Add -h and --help options to the manual page (Closes: 517257)
 
   [Santiago Ruano Rincón]
-  * Move DEBIAN/md5sums to a macro and rewrite to be more robust using find | 
+  * Move DEBIAN/md5sums to a macro and rewrite to be more robust using find |
     xargs and to drop the broken chmod calls. Thank to Loïc Minier from
     Ubuntu. (Closes: #565393)
 
@@ -197,14 +268,14 @@ bzip2 (1.0.5-0.1ubuntu1) intrepid; urgency=low
 bzip2 (1.0.5-0.1) unstable; urgency=high
 
   * NMU
-  * New upstream version. Fixes a denial of service via a crafted file. 
-    Ref: CVE-2008-1372. (Closes: #471670). 
+  * New upstream version. Fixes a denial of service via a crafted file.
+    Ref: CVE-2008-1372. (Closes: #471670).
 
  -- Luis Uribe <acme@eviled.org>  Mon, 24 Mar 2008 13:34:34 -0500
 
 bzip2 (1.0.4-4) unstable; urgency=low
 
-  * bzcmp: Fixed exit status for one-argument usage. Thanks to 
+  * bzcmp: Fixed exit status for one-argument usage. Thanks to
     Peter Samuelson <peter@p12n.org> (Closes: #464217).
   * debian/control: Added ${shlibs:Depends} to bzip2's Depends
 
@@ -213,7 +284,7 @@ bzip2 (1.0.4-4) unstable; urgency=low
 bzip2 (1.0.4-3) unstable; urgency=low
 
   * debian/rules: changing mode for actual files in dev{32,64} dirs to
-    avoid afecting dangling symlinks and make chmod happy. 
+    avoid afecting dangling symlinks and make chmod happy.
     (Closes: #464270)
 
  -- Santiago Ruano Rincón <santiago@debian.org>  Wed, 06 Feb 2008 23:31:58 +0100
@@ -295,7 +366,7 @@ bzip2 (1.0.4-0ubuntu1) gutsy; urgency=low
 
 bzip2 (1.0.3-7) unstable; urgency=low
 
-  * Updated Build-depends, added gcc-multilib to fix FTBFS. Thanks to 
+  * Updated Build-depends, added gcc-multilib to fix FTBFS. Thanks to
     "brian m. carlson" <sandals@crustytoothpaste.ath.cx>. (Closes: #422380)
 
  -- Santiago Ruano Rincón <santiago@debian.org>  Sun,  6 May 2007 00:34:43 -0500
@@ -309,8 +380,8 @@ bzip2 (1.0.3-6) unstable; urgency=low
 
 bzip2 (1.0.3-5) unstable; urgency=low
 
-  * 32-bit libraries installed in /usr/lib32 instead of 
-    /emul/ia32-linux/usr/lib on ppc64. Patch by Andreas Jochens <aj@andaco.de> 
+  * 32-bit libraries installed in /usr/lib32 instead of
+    /emul/ia32-linux/usr/lib on ppc64. Patch by Andreas Jochens <aj@andaco.de>
     (Closes: #384284)
   * Fixed doc-base control file, added Index: value for "info" format.
     (Closes: #377184)
@@ -319,7 +390,7 @@ bzip2 (1.0.3-5) unstable; urgency=low
 
 bzip2 (1.0.3-4) unstable; urgency=low
 
-  * The file of lib32bz2-1.0 and lib32bz2-dev are installed into 
+  * The file of lib32bz2-1.0 and lib32bz2-dev are installed into
     /emul/ia32-linux/usr/lib, not /usr/lib32. (Closes: #379858)
 
  -- Santiago Ruano Rincón <santiago@debian.org>  Tue,  8 Aug 2006 21:22:51 -0500
@@ -353,7 +424,7 @@ bzip2 (1.0.3-2) unstable; urgency=low
   * Fixed "upgrading fails", closes: #348266. Patches by Paul Brook
     <paul@nowt.org> and Paul Wise <pabs3@bonedaddy.net>.
   * Replaces amd64-libs and amd64-libs-dev versions << 1.5.
-  
+
  -- Anibal Monsalve Salazar <anibal@debian.org>  Mon, 16 Jan 2006 14:37:38 +1100
 
 bzip2 (1.0.3-1) unstable; urgency=low
@@ -366,7 +437,7 @@ bzip2 (1.0.3-1) unstable; urgency=low
   * Updated debian/copyright file.
   * Fixed linda error "File not found for field Files in doc-base file
     /usr/share/doc/bzip2/manual_*.html".
-  
+
  -- Anibal Monsalve Salazar <anibal@debian.org>  Sun, 15 Jan 2006 10:35:23 +1100
 
 bzip2 (1.0.3-0ubuntu1) dapper; urgency=low
@@ -397,14 +468,14 @@ bzip2 (1.0.2-10ubuntu1) dapper; urgency=low
 bzip2 (1.0.2-10) unstable; urgency=low
 
   * Fixed "libbz2-1.0: broken .shlibs file", closes: #330637.
-  
+
  -- Anibal Monsalve Salazar <anibal@debian.org>  Thu, 29 Sep 2005 13:04:47 +1000
 
 bzip2 (1.0.2-9) unstable; urgency=low
 
   * Acknowledge NMU, closes: #321286.
   * Fixed dependency problem, closes: #330003.
-  
+
  -- Anibal Monsalve Salazar <anibal@debian.org>  Mon, 26 Sep 2005 23:26:55 +1000
 
 bzip2 (1.0.2-8.1) unstable; urgency=low
@@ -595,7 +666,7 @@ bzip2 (1.0.1-3) unstable; urgency=low
     changed the fopen call to be safer with O_EXCL); closes: #81277.
   * No more complaints when attempting to uncompress directories if -q
     flag is specified; closes #81672.
-  * Added bz{more,less,{e,f,}grep,diff,cmp} wrapper scripts; 
+  * Added bz{more,less,{e,f,}grep,diff,cmp} wrapper scripts;
     closes: #81113, #69621.
 
  -- Philippe Troin <phil@fifi.org>  Sat, 20 Jan 2001 17:51:39 -0800
@@ -616,7 +687,7 @@ bzip2 (1.0.1-1) unstable; urgency=low
     Patch provided by Colin Phipps <crp22@cam.ac.uk>.
   * Updated copyright file, fixed URL; closes: #64270, #64271.
   * Don't give statistics when no bytes were compressed; closes: #68932.
-  * Make bzcat and bzip2 -d cat the file if the -f option is set; 
+  * Make bzcat and bzip2 -d cat the file if the -f option is set;
     closes: #65391.
   * Added sections and priorities to packages.
   * Bumped standards-version to 3.2.1.0.
@@ -719,7 +790,7 @@ bzip2 (0.1pl2-3) unstable; urgency=low
   * Revised debian/rules.
   * Added a note in README.Debian about some suggested bzip2 magic numbers.
   * Changed my maintainer e-mail address to <foka@debian.org>.  :)
-    
+
  -- Anthony Fok <foka@debian.org>  Tue,  6 Jan 1998 01:41:15 -0700
 
 bzip2 (0.1pl2-2) unstable; urgency=low
@@ -733,4 +804,3 @@ bzip2 (0.1pl2-1) unstable; urgency=low
   * Initial Release.
 
  -- Anthony Fok <foka@gpu.srv.ualberta.ca>  Sat, 11 Oct 1997 16:52:07 -0600
-
