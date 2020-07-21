@@ -1,5 +1,1 @@
-Tests: link-with-shared
-Depends: @, @builddeps@
-
-Tests: bigfile compare compress grep
-Depends: @
+Tests: compress link-with-shared

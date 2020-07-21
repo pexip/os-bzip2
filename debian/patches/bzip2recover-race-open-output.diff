@@ -2,10 +2,8 @@ Description: fix unsafe race condition in opening output files.
 Author: Colin Phipps <crp22@cam.ac.uk>
 Bug-Debian: https://bugs.debian.org/56386
 
-Index: bzip2/bzip2recover.c
-===================================================================
---- bzip2.orig/bzip2recover.c
-+++ bzip2/bzip2recover.c
+--- a/bzip2recover.c
++++ b/bzip2recover.c
 @@ -24,6 +24,8 @@
  #include <errno.h>
  #include <stdlib.h>
@@ -15,7 +13,7 @@ Index: bzip2/bzip2recover.c
  
  
  /* This program records bit locations in the file to be recovered.
-@@ -269,6 +271,19 @@ static Bool endsInBz2 ( Char* name )
+@@ -269,6 +271,19 @@
         name[n-1] == '2');
  }
  
@@ -35,7 +33,7 @@ Index: bzip2/bzip2recover.c
  
  /*---------------------------------------------------*/
  /*---                                             ---*/
-@@ -488,7 +503,7 @@ Int32 main ( Int32 argc, Char** argv )
+@@ -486,7 +501,7 @@
           fprintf ( stderr, "   writing block %d to `%s' ...\n",
                             wrBlock+1, outFileName );
  

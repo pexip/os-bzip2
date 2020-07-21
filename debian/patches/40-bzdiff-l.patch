@@ -2,7 +2,7 @@ Description: bzdiff: properly pass -I (ignore regex) option to diff
  This patch is far from sufficient. See the bug log for details.
 Bug-Ubuntu: https://bugs.launchpad.net/ubuntu/+source/bzip2/+bug/735675
 Origin: ubuntu, https://bugs.launchpad.net/ubuntu/+source/bzip2/+bug/735675
-Reviewed-by: Santiago Ruano RincÃ³n <santiago@debian.org>
+Reviewed-by: Santiago Ruano Rincón <santiago@debian.org>
 Last-Update: 2020-07-20
 
 Index: bzip2/bzdiff
