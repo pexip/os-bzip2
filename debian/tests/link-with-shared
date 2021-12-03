@@ -1,6 +1,10 @@
 #!/bin/sh
 set -C -e -f -u
-cd "$ADTTMP"
+eval $(dpkg-architecture -s)
+PKG_CONFIG=$DEB_HOST_GNU_TYPE-pkg-config
+CC=$DEB_HOST_GNU_TYPE-gcc
+
+cd "$AUTOPKGTEST_TMP"
 cat > hello.c <<EOF
 #include <stdlib.h>
 #include <bzlib.h>
@@ -14,5 +18,6 @@ int main () {
     exit (EXIT_FAILURE);
 }
 EOF
-cc hello.c -lbz2 -o hello
+
+$CC hello.c -lbz2 -o hello
 ./hello

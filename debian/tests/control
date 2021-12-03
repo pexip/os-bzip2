@@ -1,1 +1,5 @@
-Tests: compress link-with-shared
+Tests: link-with-shared
+Depends: build-essential, @, @builddeps@
+
+Tests: bigfile bzexe-test compare compress grep
+Depends: @
