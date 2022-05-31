@@ -1,3 +1,46 @@
+bzip2 (1.0.8-4) unstable; urgency=high
+
+  * debian/patches/40-bzdiff-l.patch: Fix bzdiff does not work when comparing
+    two bzip2 compressed files. Thanks to Joey Schulze <joey@infodrom.org>.
+    (Closes: #965309)
+  * Add debian/tests/compare
+  * debian/tests/control: remove dependency on builddeps from some tests
+
+ -- Santiago Ruano Rincón <santiago@debian.org>  Mon, 20 Jul 2020 15:00:23 +0200
+
+bzip2 (1.0.8-3) unstable; urgency=low
+
+  * Append -D_FILE_OFFSET_BITS=64 variable to buildflags, to renable handling
+    big files in 32bit archs (Closes: #944557)
+  * Add debian/tests/bigfile
+  * Add debian/gbp.conf
+
+ -- Santiago Ruano Rincón <santiago@debian.org>  Tue, 26 May 2020 15:19:32 +0200
+
+bzip2 (1.0.8-2) unstable; urgency=low
+
+  * fix debian/patches/20-legacy.patch (Closes: #933539)
+  * Add debian/tests/grep, autopkgtest for bzgrep
+
+ -- Santiago Ruano Rincón <santiago@debian.org>  Thu, 05 Sep 2019 17:05:14 +0200
+
+bzip2 (1.0.8-1) experimental; urgency=low
+
+  [ Ondřej Nový ]
+  * d/tests: Use AUTOPKGTEST_TMP instead of ADTTMP
+
+  [ Santiago Ruano Rincón ]
+  * Acknowledge NMUs. Thanks to Salvatore!
+  * New upstream version 1.0.8
+  * Drop patches now included in upstream:
+    - bzip2recover-CVE-2016-3189.patch
+    - bzdiff-tmpdir-spaces.diff
+  * d/tests/control: depends on buildeps
+  * Include debian/salsa-ci.yml
+  * Re-enable debian/watch updating upstream URL
+
+ -- Santiago Ruano Rincón <santiago@debian.org>  Mon, 22 Jul 2019 18:57:54 -0300
+
 bzip2 (1.0.6-9.2~deb10u1pexip2) pexip; urgency=medium
 
   * Rebuild in buster environment
@@ -9,12 +52,6 @@ bzip2 (1.0.6-9.2~deb10u1pexip1) pexip; urgency=medium
   * Migrate to Buster
 
  -- Vincent Sanders <vince@pexip.com>  Thu, 27 Feb 2020 22:49:57 +0000
-
-bzip2 (1.0.6-9.2~deb10u1) buster; urgency=medium
-
-  * Rebuild for buster
-
- -- Salvatore Bonaccorso <carnil@debian.org>  Wed, 10 Jul 2019 21:17:52 +0200
 
 bzip2 (1.0.6-9.2) unstable; urgency=medium
 

@@ -2,10 +2,14 @@ Description: bzdiff: properly pass -I (ignore regex) option to diff
  This patch is far from sufficient. See the bug log for details.
 Bug-Ubuntu: https://bugs.launchpad.net/ubuntu/+source/bzip2/+bug/735675
 Origin: ubuntu, https://bugs.launchpad.net/ubuntu/+source/bzip2/+bug/735675
+Reviewed-by: Santiago Ruano Rincón <santiago@debian.org>
+Last-Update: 2020-07-20
 
---- a/bzdiff
-+++ b/bzdiff
-@@ -24,7 +24,11 @@
+Index: bzip2/bzdiff
+===================================================================
+--- bzip2.orig/bzdiff
++++ bzip2/bzdiff
+@@ -24,7 +24,11 @@ FILES=
  for ARG
  do
      case "$ARG" in
@@ -18,12 +22,3 @@ Origin: ubuntu, https://bugs.launchpad.net/ubuntu/+source/bzip2/+bug/735675
       *)	if test -f "$ARG"; then
              FILES="$FILES $ARG"
          else
-@@ -54,7 +58,7 @@
- 			      exit 1
- 			}
-                         bzip2 -cdfq "$2" > "$tmp"
--                        bzip2 -cdfq "$1" | $comp $OPTIONS - "$tmp"
-+                        bzip2 -cdfq "$1" | $comp "$OPTIONS" - "$tmp"
-                         STAT="$?"
- 			/bin/rm -f "$tmp";;
- 

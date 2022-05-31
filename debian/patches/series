@@ -4,8 +4,4 @@ xml-manual-escape.diff
 help-option.diff
 makefile.diff
 bzip2recover-race-open-output.diff
-bzip2recover-CVE-2016-3189.patch
-bzdiff-tmpdir-spaces.diff
 40-bzdiff-l.patch
-Make-sure-nSelectors-is-not-out-of-range.patch
-Accept-as-many-selectors-as-the-file-format-allows.patch

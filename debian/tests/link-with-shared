@@ -1,6 +1,6 @@
 #!/bin/sh
 set -C -e -f -u
-cd "$ADTTMP"
+cd "$AUTOPKGTEST_TMP"
 cat > hello.c <<EOF
 #include <stdlib.h>
 #include <bzlib.h>
