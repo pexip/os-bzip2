@@ -11,7 +11,7 @@ Build-Depends-Indep: texinfo, docbook-xml, docbook2x, xsltproc
 Homepage: https://web.archive.org/web/20180801004107/http://www.bzip.org/
 Vcs-Git: https://salsa.debian.org/debian/bzip2.git
 Vcs-Browser: https://salsa.debian.org/debian/bzip2
-XS-Pexip-Upstream: http://ftp.debian.org/debian/ buster
+XS-Pexip-Upstream: http://deb.debian.org/debian/ bullseye
 
 Package: libbz2-1.0
 Section: libs
