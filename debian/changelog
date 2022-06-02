@@ -1,3 +1,9 @@
+bzip2 (1.0.8-4pexip1) pexip; urgency=medium
+
+  * Initial bullseye build
+
+ -- Mark Hymers <mark.hymers@pexip.com>  Thu, 02 Jun 2022 14:42:03 +0100
+
 bzip2 (1.0.8-4) unstable; urgency=high
 
   * debian/patches/40-bzdiff-l.patch: Fix bzdiff does not work when comparing
