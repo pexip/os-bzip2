@@ -14,6 +14,9 @@ endif
 DEB_BUILD_MAINT_OPTIONS := hardening=+all
 DEB_CFLAGS_MAINT_APPEND := -Wall -Winline
 DEB_CPPFLAGS_MAINT_APPEND := -D_REENTRANT
+# This -D_FILE_OFFSET_BITS=64 is needed to make bzip2 able to handle > 2GB-size
+# files in 32-bit archs. See #944557
+DEB_CPPFLAGS_MAINT_APPEND += -D_FILE_OFFSET_BITS=64
 include /usr/share/dpkg/buildflags.mk
 
 include /usr/share/dpkg/pkg-info.mk

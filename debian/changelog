@@ -1,3 +1,19 @@
+bzip2 (1.0.6-9.2~deb10u2pexip1) pexip; urgency=medium
+
+  * New upstream release
+
+ -- Steve McIntyre <steve.mcintyre@pexip.com>  Wed, 21 Sep 2022 16:37:19 +0100
+
+bzip2 (1.0.6-9.2~deb10u2) buster-security; urgency=medium
+
+  * Append -D_FILE_OFFSET_BITS=64 variable to buildflags, to renable handling
+    big files in 32-bit archs (Closes: #944557)
+  * debian/patches/40-bzdiff-l.patch: Fix bzdiff does not work when comparing
+    two bzip2 compressed files. Thanks to Joey Schulze <joey@infodrom.org>.
+    (Closes: #965309)
+
+ -- Santiago Ruano Rincón <santiago@debian.org>  Tue, 21 Jul 2020 10:36:47 +0200
+
 bzip2 (1.0.6-9.2~deb10u1pexip2) pexip; urgency=medium
 
   * Rebuild in buster environment
