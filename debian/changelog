@@ -1,3 +1,32 @@
+bzip2 (1.0.8-5pexip1) pexip-bookworm; urgency=medium
+
+  * Initial bookworm build
+
+ -- Steve McIntyre <steve.mcintyre@pexip.com>  Mon, 13 Nov 2023 12:08:01 +0000
+
+bzip2 (1.0.8-5) unstable; urgency=medium
+
+  [ Gianfranco Costamagna ]
+  * Make tests cross-test-friendly
+  * Add build-essential to test dependencies
+
+  [ Santiago Ruano Rincón ]
+  * debian/tests/compare: get expected result from diff
+  * Use mktemp in bzexe instead of the no longer available tempfile
+    (Closes: #992442)
+  * Add debian/tests/bzexe-test
+
+  [ Anthony Fok ]
+  * Apply "cme fix dpkg" fixes with some manual tweaks:
+    - Reorganize debian/control fields
+    - Update debhelper-compat to (= 13)
+    - Bump Standards-Version to 4.6.0 (no change)
+    - Remove "Build-Depends: dpkg-dev (>= 1.16.0)", and from bzip2-doc
+      "Depends: dpkg (>= 1.15.4) | install-info" which are no longer necessary
+    - Remove leading '/' from path in debian/libbz2-dev.install
+
+ -- Anthony Fok <foka@debian.org>  Fri, 03 Dec 2021 01:32:51 -0700
+
 bzip2 (1.0.8-4pexip3) pexip-bullseye; urgency=medium
 
   * Bullseye rebuild for ARM64 inclusion
