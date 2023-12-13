@@ -1,3 +1,9 @@
+bzip2 (1.0.8-5+b1pexip1) pexip-bookworm; urgency=medium
+
+  * Bump version to supersede Debian point release binNMU.
+
+ -- Mark Hymers <mark.hymers@pexip.com>  Wed, 13 Dec 2023 13:19:18 +0000
+
 bzip2 (1.0.8-5pexip3) pexip-bookworm; urgency=medium
 
   * Bookworm build for product distribution
