@@ -1,3 +1,19 @@
+bzip2 (1.0.8-6) unstable; urgency=medium
+
+  * Add bzip2 pkg-config file (Closes: #853803)
+  * Create symbolic instead of hard links for bunzip2 and bzcat
+    (Closes: #1041241)
+  * Bump Standards-Version to 4.7.0. No changes needed.
+
+ -- Santiago Ruano Rincón <santiago@debian.org>  Mon, 19 Aug 2024 12:41:51 -0300
+
+bzip2 (1.0.8-5.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * DEP17: Move files to /usr. (Closes: #1059981)
+
+ -- Helmut Grohne <helmut@subdivi.de>  Sat, 09 Mar 2024 18:31:02 +0100
+
 bzip2 (1.0.8-5) unstable; urgency=medium
 
   [ Gianfranco Costamagna ]
