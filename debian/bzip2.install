@@ -1,2 +1,2 @@
-bin
-debian/bzexe bin
+usr/bin
+debian/bzexe usr/bin

@@ -85,8 +85,8 @@ Description: handle build flags and build a shared library.
  	cp -f bzip2 $(PREFIX)/bin/bzip2
 -	cp -f bzip2 $(PREFIX)/bin/bunzip2
 -	cp -f bzip2 $(PREFIX)/bin/bzcat
-+	ln $(PREFIX)/bin/bzip2 $(PREFIX)/bin/bunzip2
-+	ln $(PREFIX)/bin/bzip2 $(PREFIX)/bin/bzcat
++	ln -s -f $(PREFIX)/bin/bzip2 $(PREFIX)/bin/bunzip2
++	ln -s -f $(PREFIX)/bin/bzip2 $(PREFIX)/bin/bzcat
  	cp -f bzip2recover $(PREFIX)/bin/bzip2recover
  	chmod a+x $(PREFIX)/bin/bzip2
  	chmod a+x $(PREFIX)/bin/bunzip2
